@@ -1,7 +1,7 @@
-@reference 'tailwind';
+@reference "tailwindcss";
 
 button {
-    @apply w-full h-16 outline-none focus:outline-none hover:bg-indigo-700 hover:bg-opacity-20 text-white text-xl font-light;
+   @apply w-full outline-none focus:outline-none h-16 hover:bg-indigo-700/20 text-white/50 text-xl font-light
 }
 
 .is-command {
