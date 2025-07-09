@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, input, out
   //por ej al atributo class le va a agregar el valor que dice abajo
   //los [] es porque es un binding
   host: {
-    class: 'w-1/4 border-r border-b border-indigo-400',
+    class: 'border-r border-b border-indigo-400',
     '[class.w-2/4]': 'isDoubleSize()',
     '[class.w-1/4]': '!isDoubleSize()'
     // attribute: 'hola' -> esto crea un attribute="hola" en el html de este componente
