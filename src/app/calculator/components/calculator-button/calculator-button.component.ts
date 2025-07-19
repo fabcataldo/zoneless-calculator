@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, input, out
   templateUrl: './calculator-button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './calculator-button.component.css',
-  //con el "host: {..." es lo mismo que el hostbinding
+  //con el "host: {..." es lo mismo que el @hostbinding
   //el hostbinding lo que hace es agregarle al host (tag html de este componente)
   //valores a atributos que yo quiera
   //por ej al atributo class le va a agregar el valor que dice abajo
