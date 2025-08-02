@@ -1,5 +1,5 @@
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { CalculatorButtonComponent } from './calculator-button.component';
 import { Component } from '@angular/core';
 
@@ -62,24 +62,23 @@ describe('CalculatorButtonComponent', () => {
         expect(component.onClick.emit).toHaveBeenCalled();
     });
 
-    it('should set isPressed to true and then false when keyboardPressStyle is called with a matching key', (done) => {
+    it('should set isPressed to true and then false when keyboardPressStyle is called with a matching key', fakeAsync(() => {
         component.contentValue()!.nativeElement.innerText = '1';
         component.keyboardPressedStyle('1');
 
         expect(component.isPressed()).toBeTrue();
 
-        setTimeout(()=>{
-            expect(component.isPressed()).toBeFalse();
-            done();
-        }, 1000);
-    });
+        tick(100);
+        expect(component.isPressed()).toBeFalse();
+    }));
 
-    it('should not set isPressed to true if key is not matching', (done) => {
+    it('should not set isPressed to true if key is not matching', fakeAsync(() => {
         component.contentValue()!.nativeElement.innerText = '1';
         component.keyboardPressedStyle('2');
 
+        tick(100);
         expect(component.isPressed()).toBeFalse();
-    });
+    }));
 
     it('should display projected content', () => {
         const testHostFixture = TestBed.createComponent(TestHostComponent);
