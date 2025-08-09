@@ -2,8 +2,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CalculatorComponent } from './calculator.component';
 import { CalculatorService } from '@/calculator/services/calculator.service';
-import { By } from '@angular/platform-browser';
-import { CalculatorButtonComponent } from '../calculator-button/calculator-button.component';
 
 class MockCalculatorService {
     public resultText = jasmine.createSpy('resultText').and.returnValue('100.00');
